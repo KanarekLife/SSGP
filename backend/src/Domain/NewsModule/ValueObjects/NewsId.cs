@@ -1,6 +1,6 @@
 ﻿using SSGP.Domain.Core;
 
-namespace SSGP.Domain.News.ValueObjects;
+namespace SSGP.Domain.NewsModule.ValueObjects;
 
 public class NewsId : GuidId
 {
@@ -10,4 +10,5 @@ public class NewsId : GuidId
 
     public static NewsId New() => new(Guid.NewGuid());
     public static NewsId From(Guid guid) => new(guid);
+    public Guid ToGuid() => Value;
 }

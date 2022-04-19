@@ -2,20 +2,20 @@
 
 public abstract class GuidId : ValueObject
 {
-    private readonly Guid _value;
+    protected readonly Guid Value;
 
     protected GuidId(Guid value)
     {
-        _value = value;
+        Value = value;
     }
 
     protected override IEnumerable<object?> GetEqualityComponents()
     {
-        yield return _value;
+        yield return Value;
     }
 
     public override string ToString()
     {
-        return _value.ToString();
+        return Value.ToString();
     }
 }

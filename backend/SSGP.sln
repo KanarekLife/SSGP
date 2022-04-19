@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8C27CBD9-946
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSGP.Domain", "src\Domain\SSGP.Domain.csproj", "{BBA2B2BE-3B03-4C04-83A7-CBD9F50BAED1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSGP.Application", "src\Application\SSGP.Application.csproj", "{92CEE240-7892-48C7-9A96-BFEAD5904A55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +22,13 @@ Global
 		{BBA2B2BE-3B03-4C04-83A7-CBD9F50BAED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBA2B2BE-3B03-4C04-83A7-CBD9F50BAED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBA2B2BE-3B03-4C04-83A7-CBD9F50BAED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92CEE240-7892-48C7-9A96-BFEAD5904A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92CEE240-7892-48C7-9A96-BFEAD5904A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92CEE240-7892-48C7-9A96-BFEAD5904A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92CEE240-7892-48C7-9A96-BFEAD5904A55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BBA2B2BE-3B03-4C04-83A7-CBD9F50BAED1} = {8C27CBD9-946F-44F6-98A1-6DBD1A8295D5}
+		{92CEE240-7892-48C7-9A96-BFEAD5904A55} = {8C27CBD9-946F-44F6-98A1-6DBD1A8295D5}
 	EndGlobalSection
 EndGlobal

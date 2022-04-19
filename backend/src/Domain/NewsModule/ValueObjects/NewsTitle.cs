@@ -1,6 +1,6 @@
 ﻿using SSGP.Domain.Core;
 
-namespace SSGP.Domain.News.ValueObjects;
+namespace SSGP.Domain.NewsModule.ValueObjects;
 
 public class NewsTitle : ValueObject
 {
