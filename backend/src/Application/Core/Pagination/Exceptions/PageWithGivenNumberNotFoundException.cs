@@ -8,4 +8,9 @@ public class PageWithGivenNumberNotFoundException : ApplicationException
     }
     
     public int PageNumber { get; }
+
+    public override IEnumerable<KeyValuePair<string, object?>> Extensions()
+    {
+        yield return new KeyValuePair<string, object?>(nameof(PageNumber), PageNumber);
+    }
 }

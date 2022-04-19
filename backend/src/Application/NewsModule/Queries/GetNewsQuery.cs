@@ -8,6 +8,15 @@ namespace SSGP.Application.NewsModule.Queries;
 
 public class GetNewsQuery : IRequest<NewsDto>
 {
+    public GetNewsQuery()
+    {
+    }
+
+    public GetNewsQuery(Guid id)
+    {
+        Id = id;
+    }
+
     public Guid Id { get; set; }
 }
 

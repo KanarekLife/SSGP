@@ -11,4 +11,8 @@ public class ValidationException : ApplicationException
     }
     
     public IEnumerable<ValidationFailure> Failures { get; }
+    public override IEnumerable<KeyValuePair<string, object?>> Extensions()
+    {
+        yield return new KeyValuePair<string, object?>(nameof(Failures), Failures);
+    }
 }

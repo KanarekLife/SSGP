@@ -1,4 +1,6 @@
-﻿using SSGP.Application;
+﻿using SSGP.Api.Core;
+using SSGP.Api.Core.ExceptionFilters;
+using SSGP.Application;
 using SSGP.Infrastructure;
 
 namespace SSGP.Api;
@@ -16,7 +18,10 @@ public class Startup
     {
         services.AddApplicationLayer();
         services.AddInfrastructureLayer(_configuration);
-        services.AddControllers();
+        services.AddControllers(options =>
+        {
+            options.Filters.Add<ApplicationExceptionFilter>();
+        });
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
     }

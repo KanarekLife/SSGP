@@ -23,7 +23,7 @@ public class PaginatedResult<T>
 
     private void Validate(int currentPage, int pagesCount)
     {
-        if (currentPage > pagesCount - 1)
+        if (currentPage > pagesCount)
         {
             throw new CurrentPageCannotBeHigherThanPagesCountException();
         }

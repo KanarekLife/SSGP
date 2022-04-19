@@ -31,19 +31,18 @@ public class NewsRepository : INewsRepository
 
     public async Task<PaginatedResult<News>> GetLatest(int page = 0, int numberOfItems = 50)
     {
-        var chunkResults = await _context.News!
-            .Chunk(numberOfItems)
+        var results = await _context.News!
+            .Skip(numberOfItems * page)
+            .Take(numberOfItems)
             .ToArrayAsync();
-        if (chunkResults.Length <= page)
+        var totalNumberOfItems = await _context.News!
+            .CountAsync();
+        var totalNumberOfPages = Convert.ToInt32(Math.Ceiling((double)totalNumberOfItems / (double)numberOfItems));
+        if (results.Length == 0)
         {
             throw new PageWithGivenNumberNotFoundException(page);
         }
-
-        var pageResults = chunkResults.Skip(page).ToArray()[page];
-        var results = pageResults
-            .Take(Math.Min(pageResults.Length, numberOfItems))
-            .Select(ToNews);
-        return PaginatedResult<News>.New(results, page, chunkResults.Length);
+        return PaginatedResult<News>.New(results.Select(ToNews), page, totalNumberOfPages);
     }
 
     public async Task Add(News news)

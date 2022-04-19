@@ -7,6 +7,15 @@ namespace SSGP.Application.NewsModule.Commands;
 
 public class DeleteNewsCommand : IRequest
 {
+    public DeleteNewsCommand()
+    {
+        
+    }
+    public DeleteNewsCommand(Guid id)
+    {
+        Id = id;
+    }
+
     public Guid Id { get; set; }
 }
 

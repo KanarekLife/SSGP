@@ -8,6 +8,17 @@ namespace SSGP.Application.NewsModule.Queries;
 
 public class GetLatestNewsQuery : IRequest<PaginationDto<NewsDto>>
 {
+    public GetLatestNewsQuery()
+    {
+        
+    }
+
+    public GetLatestNewsQuery(int pageNumber, int numberOfItemsPerPage)
+    {
+        PageNumber = pageNumber;
+        NumberOfItemsPerPage = numberOfItemsPerPage;
+    }
+    
     public int PageNumber { get; set; } = 0;
     public int NumberOfItemsPerPage { get; set; } = 50;
 }

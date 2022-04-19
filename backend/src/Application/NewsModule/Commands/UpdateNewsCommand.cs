@@ -8,6 +8,18 @@ namespace SSGP.Application.NewsModule.Commands;
 
 public class UpdateNewsCommand : IRequest<NewsDto>
 {
+    public UpdateNewsCommand()
+    {
+        
+    }
+    
+    public UpdateNewsCommand(Guid id, string? newTitle, string? newContent)
+    {
+        NewsId = id;
+        NewTitle = newTitle;
+        NewContent = newContent;
+    }
+
     public Guid NewsId { get; set; }
     public string? NewTitle { get; set; }
     public string? NewContent { get; set; }
@@ -19,10 +31,6 @@ public class UpdateNewsCommandValidator : AbstractValidator<UpdateNewsCommand>
     {
         RuleFor(x => x.NewsId)
             .NotNull();
-        RuleFor(x => x.NewTitle)
-            .NotEmpty();
-        RuleFor(x => x.NewContent)
-            .NotEmpty();
     }
 }
 
