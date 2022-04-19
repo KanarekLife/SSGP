@@ -18,6 +18,9 @@ public class PaginatedResult<T>
     public IEnumerable<T> Content { get; }
     public bool HasNextPage() => CurrentPage < PagesCount - 1;
 
+    public static PaginatedResult<T> New(IEnumerable<T> content, int currentPage, int pagesCount)
+        => new(currentPage, pagesCount, content);
+
     private void Validate(int currentPage, int pagesCount)
     {
         if (currentPage > pagesCount - 1)
